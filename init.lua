@@ -555,9 +555,6 @@ require('nlspsettings').setup({
   loader = 'json',
 })
 
-require('lspconfig').svlangserver.setup {
-  on_attach = on_attach
-}
 
 require("tokyonight").setup({
   -- your configuration comes here
