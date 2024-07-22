@@ -210,10 +210,6 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  {
-    'tamago324/nlsp-settings.nvim',
-  },
-
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -445,7 +441,6 @@ local on_attach = function(client, bufnr)
   vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
 
-  require('nlspsettings').update_settings(client.name)
 end
 
 -- Enable the following language servers
@@ -545,16 +540,6 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
--- [[ Configure nlspsettings ]]
-require('nlspsettings').setup({
-  config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
-  local_settings_dir = ".nlsp-settings",
-  local_settings_root_markers_fallback = { '.git' },
-  append_default_schemas = true,
-  loader = 'json',
-})
-
 
 require("tokyonight").setup({
   -- your configuration comes here
